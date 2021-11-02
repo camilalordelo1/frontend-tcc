@@ -1,0 +1,119 @@
+/* Cabeçalho "msg + sub-msg" + logo*/
+.header {
+    display: flex;
+    width: auto;
+    margin-top: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+    /* Container msg + sub-msg*/
+    .header-child-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
+        .msg {
+            font-weight: 700;
+            color: #E95B7F;
+            font-size: 50px;
+            margin: 0;
+            flex: 1;
+        }
+
+        .sub-msg {
+            font-weight: 300;
+            color: #E95B7F;
+            font-size: 30px;
+            margin: 0;
+            flex: 1;
+            flex-wrap: nowrap;
+        }
+
+    .logo {
+        display: flex;
+        margin: 0;
+    }
+
+/* Container barra de navegação das opções*/
+.nav-bar-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 38%;
+    margin-top: 30px;
+    list-style: none;
+}
+
+
+/* Container cinza */
+.gray-container {
+    background-color: #E9E7E7;
+    height: 80%;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+    .dash-container {
+        display: flex;
+        background-color: var(--white-default);
+        width: 85%;
+        height: 300px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+
+        .time-bar {
+            display: flex;
+            height: 100%;
+            width: 15%;
+            background-color: #D6D6D6;
+        }
+            .time-bar-scroll {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 90%;
+                overflow-y: scroll;
+                display: flex;
+                margin: 0 auto;
+                align-items: center;
+            }
+
+        .scheduled-times {
+            display: flex;
+        } 
+@media (max-width: 765px){
+    .nav-bar {
+        width: 100%;
+
+    }
+    .logo {
+        visibility: hidden;
+        margin: 0;
+        width: 0;
+        height: 0;
+    }
+    .time-bar {
+        visibility: hidden;
+        margin: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .dash-container {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+}

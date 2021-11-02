@@ -1,0 +1,35 @@
+.time-bar-item{
+    display: flex;
+    width: 70%;
+    min-height: 40px;
+    background-color: var(--white-default);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2px;
+}
+
+.time-bar-item p {
+    font-weight: 500;
+    font-size: 20px;
+    color: #837f7f;
+}
+
+@media (max-width: 765px){
+    .time-bar-item {
+        visibility: hidden;
+        margin: 0;
+        width: 0;
+        height: 0;
+    }
+    .time-bar-item p {
+            visibility: hidden;
+            margin: 0;
+            width: 0;
+            height: 0;
+    }
+}

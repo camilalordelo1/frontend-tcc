@@ -1,0 +1,21 @@
+.info {
+    font-size: 20px;
+    font-weight: 400;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+}
+
+.conteudo {
+    padding-top: 2vh;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    color:black;
+    align-items: center;
+    font-weight: 700;
+    
+}
+

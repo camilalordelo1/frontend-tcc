@@ -1,0 +1,26 @@
+input {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+}
+
+
+.btnPinkP1 {
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 30px;
+    background: var(--primary-pink);
+    box-shadow: inset 0 0 0 var(--tertiary-pink), 0px 1px 7px var(--secundary-pink);
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    transition: ease-out 0.3s;
+    outline: none;
+    border: none;
+}
+
+.btnPinkP1:hover {
+    box-shadow: inset 140px 0 0 0 var(--tertiary-pink), 0px 1px 7px var(--secundary-pink);
+}
+

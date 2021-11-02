@@ -1,0 +1,29 @@
+/* logo */
+.logo {
+    text-align: center;
+    margin: 0;
+    width: 330px;
+    height: 76px;
+    filter: drop-shadow(0px 4px 4px #FFFFFF);
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h1 {
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.logo h3 {
+    font-weight: 400;
+    margin: 0 auto;
+}
+
+
+
+@media (max-width: 700px){
+    .logo {
+        margin: 0 auto;
+        align-self: center;
+    }
+}

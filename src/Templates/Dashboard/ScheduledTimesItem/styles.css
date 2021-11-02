@@ -1,0 +1,40 @@
+.scheduled-times-item {
+    border-radius: 10px;
+    background-color: gray;
+    /* TOP, RIGHT, BOTTOM, LEFT */
+    padding: 10px 10px 5px 10px;
+    color: white;
+}
+
+.scheduled-times-item h1 {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.scheduled-times-item p {
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.row-sche {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.space {
+    width: 50px;
+}
+
+.pink {
+    background: #E95B7F;
+}
+
+.blue {
+    background: #15B19E;
+}
+
+.yellow {
+    background: #E0CC15;
+}
+

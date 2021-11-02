@@ -1,0 +1,10 @@
+h1 {
+    font-weight: 300;
+    size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.home {
+    margin-top: 20px;
+}

@@ -1,0 +1,23 @@
+.title-h1 {
+    color: #E22454;
+    font-size: 35px;
+    margin-top: 0;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 300;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+
+
+hr {
+    margin: 0 auto;
+    width: 30%;
+    align-items: center;
+    height: 3px;
+    border: 0;
+    background: rgb(226,36,84);
+    background: linear-gradient(90deg, rgba(226,36,84,0) 0%, rgba(226,36,84,0.2553396358543417) 50%, rgba(255,255,255,0) 100%);
+}
+
