@@ -5,7 +5,9 @@
     justify-content: space-between;
 }
 
-
+footer {
+    background-color: black;
+}
 
 @media (max-width: 700px){
 

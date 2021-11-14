@@ -1,0 +1,77 @@
+.pri-especialidades {
+    margin-top: 30px;
+}
+
+.pri-especialidades h2 {
+    padding-top: 20px;
+    color: var(--white-default);
+    font-size: 40px;
+}
+
+.pri-rosa {
+    background-color: var(--primary-pink);
+    padding-bottom: 100px;
+}
+
+.pri-itens {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: stretch;
+    padding-bottom: 30px;
+    margin-top: -80px;
+}
+
+.pri-item {
+    background-color: #33F8CB;
+    padding: 10px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex: 1;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 20px 20px 20px 0px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.pri-item h3 {
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.pri-item img {
+    display: flex;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.pri-item:hover {
+    background-color: #84fade ;
+    cursor: pointer;
+}
+
+@media (max-width: 700px){
+    .pri-especialidades h2 {
+        text-align: center;
+    }
+    .pri-itens {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pri-item{
+        margin-top: 10px;
+        width: 80%;
+    }
+
+    .pri-item h3 {
+        margin-bottom: 10px;
+        padding-bottom: 0;
+    }
+    .pri-item img {
+        width: 15%;
+    }
+}

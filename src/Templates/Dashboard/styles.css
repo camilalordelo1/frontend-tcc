@@ -94,12 +94,12 @@
         width: 100%;
 
     }
-    .logo {
+    /*.logo {
         visibility: hidden;
         margin: 0;
         width: 0;
         height: 0;
-    }
+    } */
     .time-bar {
         visibility: hidden;
         margin: 0;

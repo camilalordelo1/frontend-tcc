@@ -5,6 +5,13 @@
     list-style: none;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
+
+}
+
+
+
+img {
+    max-width: 100%;
 }
 
 .container {
@@ -34,6 +41,7 @@
     --tertiary-pink: #F3B4C4 ;
     --pink-dark: #9E1B3C;
     --white-default: #ffff;
+    --primary-blue: #63f1e1;
 }
 
 .nav {
@@ -56,4 +64,11 @@
 
 .active {
     font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
 }

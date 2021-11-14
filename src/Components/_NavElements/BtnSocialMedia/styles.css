@@ -3,9 +3,12 @@
     flex-direction: row;
     width: 150px;
     justify-content: space-between;
+    align-items: center;
 }
 
 .btnsSocialMedia img {
+    display: flex;
+    align-items: center;
     margin: 0 auto;
     align-self: auto;
 }
@@ -22,14 +25,25 @@
     background: #2C33DC;
 }
 
+.btnFace img {
+    margin: 0 auto;
+}
+
 .btnInsta {
     background: linear-gradient(180deg, #F110C0 0%, #F1DB10 100%);
+}
+
+.btnInsta img {
+    margin: 0 auto;
 }
 
 .btnWhats {
     background: #25D366;
 }
 
+.btnWhats img {
+    margin: 0 auto;
+}
 
 .btnFace:hover, .btnInsta:hover, .btnWhats:hover {
     box-shadow: 0px 1px 7px #f887a4;

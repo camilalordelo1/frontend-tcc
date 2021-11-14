@@ -13,6 +13,7 @@ import Dashboard from './Templates/Dashboard'; // Dashboard
 
 /* PAGES SITE */
 import Home  from './Templates/Site/Home';
+import { Contato } from './Templates/Site/Contato';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,6 +21,8 @@ ReactDOM.render(
     <Switch> 
 
         <Route exact path='/' component={Home} />
+
+        <Route exact path="/contato" component={Contato} />
 
         {/* Home de Login */}
         <Route exact path='/adm' component={Login} />

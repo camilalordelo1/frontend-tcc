@@ -1,0 +1,26 @@
+.contato {
+    margin-top: 20px;
+}
+
+.contato h3 {
+    color: var(--primary-pink);
+    font-size: 5.5vh;
+    margin-bottom: 20px;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-ctt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon-ctt p {
+    font-weight: 700;
+    margin-left: 10px;
+}

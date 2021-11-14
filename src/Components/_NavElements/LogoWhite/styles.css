@@ -1,25 +1,25 @@
 /* logo */
-.logo {
+.logo-white {
     text-align: center;
     margin: 0;
-    filter: drop-shadow(0px 4px 4px #FFFFFF);
+    width: 330px;
+    height: 76px;
+    filter: drop-shadow(0px 4px 4px #000000);
     display: flex;
     flex-direction: column;
-    color: black;
+    color: white;
 }
 
-.logo h1 {
+.logo-white h1 {
     font-weight: 700;
     margin: 0 auto;
-    color: black;
-    font-size: 4vh;
+    color: white;
 }
 
-.logo h3 {
+.logo-white h3 {
     font-weight: 400;
     margin: 0 auto;
-    color: black;
-    font-size: 3vh;
+    color: white;
 }
 
 
