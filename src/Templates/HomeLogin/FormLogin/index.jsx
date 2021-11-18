@@ -6,24 +6,20 @@ import { Link } from 'react-router-dom'
 
 export const FormLogin = () => {
     return (
-            <form action="" >
-            
+            <form>
                <InputDefault
                         id="User"
                         typeInput="text" 
                         labelName="E-mail"
                 />
-                
                 <InputDefault 
                         id="Password"
                         typeInput="password" 
                         labelName="Senha"
                 />
-                
                 <Link to="/recoverypass">
                     <p className="p-pass">Esqueci a senha </p>
                 </Link>
-
                 <Link to="/dashboard" className="btn-link"> 
                     <div className="btn-box-d">
                         <BtnDefaultPink1 value="Entrar" type="submit" />

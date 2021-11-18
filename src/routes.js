@@ -12,6 +12,7 @@ import Dashboard from './Templates/Dashboard'; // Dashboard
 /* PAGES SITE */
 import Home  from './Templates/Site/Home';
 import { Contato } from './Templates/Site/Contato';
+import NewAppointment from './Templates/NewAppointment';
 
 export default function Routes() {
   return (
@@ -31,6 +32,8 @@ export default function Routes() {
           <Route exact path='/passchanged' component={PassChanged} />
           {/* Dashboard Administrativo */}
           <Route exact path='/dashboard' component={Dashboard}/>
+          {/* Novo agendamento */}
+          <Route exact path='/appointment/new' component={NewAppointment}/>
       </Switch>
     </BrowserRouter>
   )

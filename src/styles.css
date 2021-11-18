@@ -1,74 +1,72 @@
 * {
-    border: none;
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
-
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
-
-
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .container {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .inputs {
-    margin: 0 auto;
-    padding-top: 20px;
-    flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+  flex-direction: column;
 }
 
 .input-filho {
-    display: flex;
-    flex-flow: column-nowrap;
-    flex-basis: auto;
-    flex-direction: column;
-    align-self: center;
-    margin: 0 60px 0 30px;
+  display: flex;
+  flex-flow: column-nowrap;
+  flex-basis: auto;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 60px 0 30px;
 }
 
 :root {
-    --primary-pink: #E22454;
-    --secundary-pink: #E95B7F;
-    --tertiary-pink: #F3B4C4 ;
-    --pink-dark: #9E1B3C;
-    --white-default: #ffff;
-    --primary-blue: #63f1e1;
+  --primary-pink: #e22454;
+  --secundary-pink: #e95b7f;
+  --tertiary-pink: #f3b4c4;
+  --pink-dark: #9e1b3c;
+  --white-default: #ffff;
+  --primary-blue: #63f1e1;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Button for Box Default */
 .btn-box-d {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-link {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 @media (max-width: 700px) {
-    .container {
-        width: 100%;
-        margin: 0 auto;
-    }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
 }

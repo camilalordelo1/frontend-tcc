@@ -6,9 +6,8 @@ export const ScheduledTimesItem = (props) => {
     // color => pink, blue, yellow
     
     return(
-    
         <>
-        <div className={"scheduled-times-item"} >
+        <div className="scheduled-times-item">
             <div className="row-sche">
                 <h1> {nameCheck} </h1>
                 <p> {hourCheck} </p>
