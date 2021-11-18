@@ -30,7 +30,6 @@ img {
   flex-basis: auto;
   flex-direction: column;
   align-self: center;
-  margin: 0 60px 0 30px;
 }
 
 :root {

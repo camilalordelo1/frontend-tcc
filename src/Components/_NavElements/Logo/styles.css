@@ -1,32 +1,23 @@
 /* logo */
 .logo {
-    text-align: center;
-    margin: 0;
-    filter: drop-shadow(0px 4px 4px #FFFFFF);
-    display: flex;
-    flex-direction: column;
-    color: black;
+  text-align: center;
+  margin: 0;
+  filter: drop-shadow(0px 4px 4px #ffffff);
+  display: flex;
+  flex-direction: column;
+  color: black;
 }
 
 .logo h1 {
-    font-weight: 700;
-    margin: 0 auto;
-    color: black;
-    font-size: 4vh;
+  font-weight: 700;
+  margin: 0 auto;
+  color: black;
+  font-size: 4vh;
 }
 
 .logo h3 {
-    font-weight: 400;
-    margin: 0 auto;
-    color: black;
-    font-size: 3vh;
-}
-
-
-
-@media (max-width: 700px){
-    .logo {
-        margin: 0 auto;
-        align-self: center;
-    }
+  font-weight: 400;
+  margin: 0 auto;
+  color: black;
+  font-size: 3vh;
 }

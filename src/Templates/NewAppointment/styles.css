@@ -45,16 +45,17 @@ form {
   width: 100%;
 }
 
-main h1 {
+main#newAppointment h1 {
   color: var(--primary-pink);
   font-weight: 700;
   margin-top: 3.2rem;
 }
 
-main {
+main#newAppointment {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  padding-bottom: 1.6rem;
 }
 
 .sameLine {
@@ -63,7 +64,7 @@ main {
   justify-content: space-around;
 }
 
-.form__div {
+.sameLine .input-filho:not(:last-child) {
   margin-right: 1.6rem;
 }
 
@@ -91,7 +92,7 @@ main {
     padding: 0 1.6rem;
   }
 
-  main {
+  main#newAppointment {
     align-items: center;
   }
 
@@ -99,7 +100,7 @@ main {
     flex-direction: column;
   }
 
-  .form__div {
-    margin-right: 0;
+  .input-filho {
+    margin-right: 0 !important;
   }
 }

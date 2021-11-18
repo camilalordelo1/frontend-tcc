@@ -9,6 +9,7 @@ import { Logo } from '../../Components/_NavElements/Logo';
 import { NavItem } from '../../Components/NavItem';
 import { PinkBar } from '../../Components/PinkBar';
 import { InputDefault } from '../../Components/InputDefault'
+import { BtnDefaultPink1 } from '../../Components/_BtnsDefault/BtnDefaultPink1'
 
 export default function NewAppointment() {
     return(    
@@ -33,7 +34,7 @@ export default function NewAppointment() {
                 </h1>
               </div>           
           </div>
-          <main>
+          <main id="newAppointment">
             <h1>
               Nova Consulta
             </h1>
@@ -81,6 +82,7 @@ export default function NewAppointment() {
                 <label htmlFor="commentsTextarea">Anotações</label>
                 <textarea id="commentsTextarea"/>
               </div>
+              <BtnDefaultPink1 value="Enviar"/>
             </form>
           </main>
       </div>

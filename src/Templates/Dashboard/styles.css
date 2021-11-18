@@ -63,6 +63,18 @@
   overflow-y: scroll;
 }
 
+.dash-container::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+.dash-container::-webkit-scrollbar {
+  width: 5px;
+  background: #f4f4f4;
+}
+.dash-container::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 15px;
+}
+
 tr,
 table {
   width: 100%;
@@ -77,7 +89,7 @@ tr {
 .time-bar {
   background-color: #d6d6d6;
   padding: 0 0.8rem;
-  width: 4.2rem;
+  width: min-content;
   display: table-cell;
   margin-right: auto;
 }
@@ -92,12 +104,6 @@ tr {
   .nav-bar {
     width: 100%;
   }
-  /*.logo {
-        visibility: hidden;
-        margin: 0;
-        width: 0;
-        height: 0;
-    } */
 
   .dash-container {
     display: flex;

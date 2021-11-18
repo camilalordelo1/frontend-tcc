@@ -1,12 +1,14 @@
 .input-filho {
-  margin: 0 !important;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .form__div {
   position: relative;
   height: 25px;
   margin-bottom: 3.5rem;
+  margin-right: 0;
 }
 
 .form__input {

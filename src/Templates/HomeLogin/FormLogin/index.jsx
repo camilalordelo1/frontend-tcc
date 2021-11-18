@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export const FormLogin = () => {
     return (
-            <form>
+            <form id="loginForm">
                <InputDefault
                         id="User"
                         typeInput="text" 
