@@ -13,27 +13,30 @@ import Dashboard from './Templates/Dashboard'; // Dashboard
 import Home  from './Templates/Site/Home';
 import { Contato } from './Templates/Site/Contato';
 import NewAppointment from './Templates/NewAppointment';
+import SearchAppointments from './Templates/SearchAppointments';
 
 export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-      <Route exact path='/' component={Home} />
-          <Route exact path="/contato" component={Contato} />
-          {/* Home de Login */}
-          <Route exact path='/adm' component={Login} />
-          {/* Recuperar senha */}
-          <Route exact path='/recoverypass' component={Recoverypass} />
-          {/* Confirmar código */}
-          <Route exact path='/confirmcod' component={ConfirmCod} />
-          {/* Digitar nova senha */}
-          <Route exact path='/newpass' component={NewPass} />
-          {/* Senha alterada com sucesso */}
-          <Route exact path='/passchanged' component={PassChanged} />
-          {/* Dashboard Administrativo */}
-          <Route exact path='/dashboard' component={Dashboard}/>
-          {/* Novo agendamento */}
-          <Route exact path='/appointment/new' component={NewAppointment}/>
+        <Route exact path='/' component={Home} />
+        <Route path="/contato" component={Contato} />
+        {/* Home de Login */}
+        <Route path='/adm' component={Login} />
+        {/* Recuperar senha */}
+        <Route path='/recoverypass' component={Recoverypass} />
+        {/* Confirmar código */}
+        <Route path='/confirmcod' component={ConfirmCod} />
+        {/* Digitar nova senha */}
+        <Route path='/newpass' component={NewPass} />
+        {/* Senha alterada com sucesso */}
+        <Route path='/passchanged' component={PassChanged} />
+        {/* Dashboard Administrativo */}
+        <Route path='/dashboard' component={Dashboard}/>
+        {/* Novo agendamento */}
+        <Route path='/appointment/new' component={NewAppointment}/>
+        {/* Pesquisar consultas agendadas */}
+        <Route path='/search' component={SearchAppointments}/>
       </Switch>
     </BrowserRouter>
   )

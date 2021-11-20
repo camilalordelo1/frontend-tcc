@@ -11,7 +11,7 @@ import { PinkBar } from '../../Components/PinkBar';
 import { InputDefault } from '../../Components/InputDefault'
 import { BtnDefaultPink1 } from '../../Components/_BtnsDefault/BtnDefaultPink1'
 
-export default function NewAppointment() {
+export default function SearchAppointments() {
     return(    
     <>
       <PinkBar />
@@ -25,66 +25,46 @@ export default function NewAppointment() {
               <div className="nav-bar-container">
                   <NavItem text="Tela inicial" src={pngHome} link="/dashboard"/>
                   <NavItem text="Visualizar calendário" src={pngCalendar} link="/calendar"/>
-                  <NavItem text="Marcar consulta" src={pngPlus}  link="/appointment/new" color="white" />
-                  <NavItem text="Pesquisar consulta" src={pngSearch}  link="/search" />
+                  <NavItem text="Marcar consulta" src={pngPlus}  link="/appointment/new" />
+                  <NavItem text="Pesquisar consulta" src={pngSearch}  link="/search" color="white" />
               </div>
               <div className="title-text">
                 <h1>
-                  Marcar consulta
+                  Pesquisar Consultas
                 </h1>
               </div>           
           </div>
           <main className="admPages">
             <h1>
-              Nova Consulta
+              Filtros
             </h1>
             <form>
-              <InputDefault 
-                typeInput="text" 
-                id="patitentName" 
-                labelName="Nome do Paciente" 
-              />
               <div className="sameLine">
                 <InputDefault 
+                  typeInput="text" 
+                  id="patitentName" 
+                  labelName="Nome do Paciente" 
+                />
+                <InputDefault
                   mask="999.999.999-99"
                   typeInput="text" 
                   id="patitentCPF" 
                   labelName="CPF do Paciente" 
                 />
-                <InputDefault 
-                  typeInput="email" 
-                  id="patitentEmail" 
-                  labelName="E-mail do Paciente" 
-                />
-                <InputDefault 
-                  mask="(99) 99999-9999"
-                  typeInput="tel" 
-                  id="phone" 
-                  labelName="Telefone Celular" 
-                />
               </div>
               <div className="sameLine">
                 <InputDefault 
-                  typeInput="date" 
-                  id="appointmentDate" 
-                  labelName="Data da consulta" 
+                  typeInput="datetime-local" 
+                  id="appointmentInitialDatetime" 
+                  labelName="Data e hora inicial" 
                 />
                 <InputDefault 
-                  typeInput="time" 
-                  id="appointmentHour" 
-                  labelName="Horário da consulta" 
-                />
-                <InputDefault 
-                  typeInput="text" 
-                  id="AppointmentType" 
-                  labelName="Tipo de consulta" 
+                  typeInput="datetime-local" 
+                  id="appointmentFinalDatetime" 
+                  labelName="Data e hora final" 
                 />
               </div>
-              <div id="commentsField">
-                <label htmlFor="commentsTextarea">Anotações</label>
-                <textarea id="commentsTextarea"/>
-              </div>
-              <BtnDefaultPink1 value="Enviar"/>
+              <BtnDefaultPink1 value="Pesquisar"/>
             </form>
           </main>
       </div>
