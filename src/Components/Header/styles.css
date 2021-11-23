@@ -1,13 +1,14 @@
 .header- {
     display: flex;
-    background-image: url(../../img/background-header.png);
-    background-position: 25% 75%;
+    background-image: url(../../img/background-header.jpeg);
+    
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     height: 516px;
     display: flex;
     max-width: 100%;
+    background-color: #DBFFFB;
 }
 
 

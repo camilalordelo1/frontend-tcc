@@ -25,7 +25,7 @@ export const Header = (props) => {
                         {/* <a className="btn-close" href=" "> x </a> */}
                         <ul className="nav-bar">
                             <li> <Link to="/" className="btn-link"> Home </Link></li>
-                            <li> <a href="#especialidades" className="btn-link"> Especialidades </a>
+                            <li> <a href="/#especialidades" className="btn-link"> Especialidades </a>
                             </li>
                             <li> <Link to ="/contato" className="btn-link"> Contato </Link> </li>
                             <div className="btn-entrar"> <Link to="/"> <BtnDefaultPink1 type={"button"} value={"Entrar"} /> </Link> </div>

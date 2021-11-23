@@ -16,6 +16,9 @@ export const Contato = () => {
             </div>
     )
     return(
-        <Header conteudoHeader={conteudoContato} />
+        <div className="div-contato">
+            <Header conteudoHeader={conteudoContato} />
+        </div>
+        
     )
 }
