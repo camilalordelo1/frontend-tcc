@@ -1,21 +1,14 @@
-form {
-    padding-top: 40px;
+#loginForm {
+  padding: 0 1.6rem;
 }
 
 .p-pass {
-    display: flex;
-    flex-direction: column;
-    color:black;
-    text-decoration: underline;
-    align-items: flex-end;
-    padding-right: 30px;
-    font-weight: 700;
-    margin-top: 0;
-
-}
-
-
-
-@media (max-width: 700px){ 
-
+  display: flex;
+  flex-direction: column;
+  color: black;
+  text-decoration: underline;
+  align-items: flex-end;
+  padding-right: 30px;
+  font-weight: 700;
+  margin-top: 0;
 }

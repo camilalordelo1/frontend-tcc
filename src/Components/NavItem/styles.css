@@ -1,0 +1,64 @@
+/* Container "circulo + texto" */
+.nav-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-grow: 1;
+  text-decoration: none;
+  color: black;
+  width: min-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item:hover {
+  opacity: 50%;
+}
+
+/* Círculo */
+.circle-item {
+  display: flex;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 100%;
+  background-color: var(--tertiary-pink);
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-item:active {
+  background-color: var(--tertiary-pink);
+}
+
+/* Texto das opções */
+.text-item {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+/* Fundo branco */
+.white {
+  background: var(--white-default);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 600px) {
+  .nav-item {
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .circle-item {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .text-item {
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+}
