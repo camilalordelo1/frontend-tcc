@@ -1,40 +1,42 @@
 .scheduled-times-item {
-    border-radius: 10px;
-    background-color: gray;
-    /* TOP, RIGHT, BOTTOM, LEFT */
-    padding: 10px 10px 5px 10px;
-    color: white;
+  border-radius: 10px;
+  background-color: gray;
+  /* TOP, RIGHT, BOTTOM, LEFT */
+  padding: 10px 10px 5px 10px;
+  color: white;
+  width: auto;
+  flex: 1;
+  margin: 0.5rem 1rem;
 }
 
 .scheduled-times-item h1 {
-    font-weight: 700;
-    font-size: 18px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .scheduled-times-item p {
-    font-weight: 300;
-    font-size: 15px;
+  font-weight: 300;
+  font-size: 15px;
 }
 
 .row-sche {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .space {
-    width: 50px;
+  width: 50px;
 }
 
 .pink {
-    background: #E95B7F;
+  background: #e95b7f;
 }
 
 .blue {
-    background: #15B19E;
+  background: #15b19e;
 }
 
 .yellow {
-    background: #E0CC15;
+  background: #e0cc15;
 }
-
