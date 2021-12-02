@@ -8,12 +8,14 @@ import ConfirmCod from './Templates/_RecoveryPass/ConfirmCod'; // Confirmação 
 import NewPass from './Templates/_RecoveryPass/NewPass'; // Nova senha
 import PassChanged  from './Templates/_RecoveryPass/PassChanged'; // Senha alterada
 import Dashboard from './Templates/Dashboard'; // Dashboard
+import NewAppointment from './Templates/NewAppointment';
+import SearchAppointments from './Templates/SearchAppointments';
 
 /* PAGES SITE */
 import Home  from './Templates/Site/Home';
 import { Contato } from './Templates/Site/Contato';
-import NewAppointment from './Templates/NewAppointment';
-import SearchAppointments from './Templates/SearchAppointments';
+  // ESPECIALIDADES
+  import { Ortopedica } from './Templates/Site/Especialidades/Ortopedica';
 
 export default function Routes() {
   return (
@@ -21,7 +23,9 @@ export default function Routes() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path="/contato" component={Contato} />
+        <Route path="/especialidades/ortopedica" component={Ortopedica} />
         {/* Home de Login */}
+
         <Route path='/adm' component={Login} />
         {/* Recuperar senha */}
         <Route path='/recoverypass' component={Recoverypass} />

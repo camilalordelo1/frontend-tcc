@@ -1,15 +1,24 @@
 .div-contato {
-    background-color: #DBFFFB;
+    background-color: #ffffff;
+    height: 720px;
 }
+
 .contato {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
     margin-top: 20px;
     
 }
 
 .contato h3 {
     color: var(--primary-pink);
-    font-size: 5.5vh;
+    font-size: 1.5rem;
     margin-bottom: 20px;
+    text-shadow: 0px 3px 5px #FFFFFF;
+}
+
+.localizacao {
+    margin-top: 40px;
 }
 
 .icon-container {
@@ -28,3 +37,43 @@
     font-weight: 700;
     margin-left: 10px;
 }
+
+.bloco-branco {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+
+}
+
+.mensagem {
+    
+    border-radius: 10px;
+    border: 1px;
+    border-color: var(--primary-pink);
+}
+
+
+#msgTextarea {
+    border: 1px solid var(--tertiary-pink);
+    border-radius: 10px;
+    outline: 0;
+    padding: 1rem;
+    resize: none;
+    height: 10.8rem;
+    margin-top: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  #msgField label {
+    margin-left: 1rem;
+  }
+  
+  #msgField {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    color: var(--secundary-pink);
+  }

@@ -1,0 +1,17 @@
+.especialidade h1 {
+    margin-top: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: left;
+    
+}
+
+.container-especialidades {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+

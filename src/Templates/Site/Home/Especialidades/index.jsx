@@ -1,6 +1,7 @@
 import './styles.css'
 
 import imgArrow from '../../../../img/imgArrow.png'
+import { Link } from 'react-router-dom'
 
 export const Especialidades = () => {
     return(
@@ -13,22 +14,30 @@ export const Especialidades = () => {
                 <div className="container">
                     <div className="pri-itens">
                         <div className="pri-item">
+                        <Link to="/especialidades/ortopedica"className="btn-link">
                             <h3> ORTOPÉDICA </h3>
                             <div className="espaco"></div>
                             <img src={imgArrow} alt="" />
+                        </Link>
                         </div>
                         <div className="pri-item">
+                        <Link className="btn-link">
                             <h3> PRÉ E PÓS OPERATÓRIO </h3>
-                        
                             <img src={imgArrow} alt="" />
+                        </Link>
                         </div>
                         <div className="pri-item">
+                        <Link className="btn-link">
                             <h3> NEUROLOGIA ADULTO E INFANTIL </h3>
                             <img src={imgArrow} alt="" />
+                        </Link>
                         </div>
+                        
                         <div className="pri-item">
+                        <Link className="btn-link">
                             <h3> TRATAMENTOS </h3>
                             <img src={imgArrow} alt="" />
+                        </Link>
                         </div>
                     </div>
                 </div>

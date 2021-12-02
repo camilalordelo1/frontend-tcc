@@ -15,7 +15,7 @@
     background-color: #40CFBE;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 .nosso-consul-bloco {
@@ -41,7 +41,7 @@
     margin-right: 40px;
     color: black;
     font-weight: 300;
-    font-size: 3.5vh;
+    font-size: 1.5rem;
     align-items: baseline;
     text-align: justify;
 }
