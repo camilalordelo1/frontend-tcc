@@ -1,6 +1,5 @@
 .header-s {
     display: flex;
-    
     margin: 0;
     padding: 0;
     height: 516px;
@@ -71,13 +70,9 @@
   margin-right: 5%;
 }
 
-.img-header {
-  margin-top: 70px;
-  justify-content: center;
-  max-width: 100%;
-}
 
-.agende {
+
+/* .agende {
   flex-direction: column;
   background-color: var(--primary-pink);
   padding: 20px 70px 20px 20px;
@@ -91,7 +86,7 @@
   font-weight: 700;
   font-size: 10vh;
   text-align: left;
-  margin-top: -70px;
+  
   text-shadow: var(--primary-pink) 1px 1px 20px;
 }
 
@@ -99,9 +94,9 @@
   font-weight: 500;
   margin-top: 10px;
   padding-bottom: 30px;
-}
+} */
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .agende {
     margin-top: 220px;
     width: 90%;
@@ -113,4 +108,4 @@
     font-size: 5vh;
     margin-top: -32px;
   }
-}
+} */

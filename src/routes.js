@@ -14,8 +14,10 @@ import SearchAppointments from './Templates/SearchAppointments';
 /* PAGES SITE */
 import Home  from './Templates/Site/Home';
 import { Contato } from './Templates/Site/Contato';
+
   // ESPECIALIDADES
   import { Ortopedica } from './Templates/Site/Especialidades/Ortopedica';
+  import { PrePosOperatorio } from './Templates/Site/Especialidades/PrePosOperatorio';
 
 export default function Routes() {
   return (
@@ -24,6 +26,7 @@ export default function Routes() {
         <Route exact path='/' component={Home} />
         <Route path="/contato" component={Contato} />
         <Route path="/especialidades/ortopedica" component={Ortopedica} />
+        <Route path="/especialidades/pre-pos-operatorio" component={PrePosOperatorio} />
         {/* Home de Login */}
 
         <Route path='/adm' component={Login} />

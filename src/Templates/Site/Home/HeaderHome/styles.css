@@ -1,7 +1,31 @@
+.agende { 
+    background-color: var(--primary-pink);
+    padding: 20px 70px 20px 20px;
+    border-radius: 20px 20px 0px 0px;
+    color: white; 
+    
+}
+  
+.agende h2 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    text-shadow: var(--primary-pink) 1px 1px 20px;
+    margin-top: -70px;
+    text-align: left;
+}
+  
 .agende h3 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    
 }
 
-.agende h2 {
-    font-size: 4rem;
-}
+  @media (max-width: 700px) {
+    .agende {
+      padding: 5px 30px 5px 20px;
+    }
+  
+  }
+  
