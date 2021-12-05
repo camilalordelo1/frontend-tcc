@@ -1,3 +1,8 @@
+import { useForm } from 'react-hook-form';
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import tz from 'dayjs/plugin/timezone'
+
 import './styles.css'
 
 import pngHome from '../../img/home.png'
@@ -10,9 +15,43 @@ import { NavItem } from '../../Components/NavItem';
 import { PinkBar } from '../../Components/PinkBar';
 import { InputDefault } from '../../Components/InputDefault'
 import { BtnDefaultPink1 } from '../../Components/_BtnsDefault/BtnDefaultPink1'
+import { api } from '../../services/api';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+dayjs.extend(utc)
+dayjs.extend(tz)
 
 export default function SearchAppointments() {
-    return(    
+  const [appointments, setAppointments] = useState([])
+  
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+        patientName: undefined,
+        patientCpf: undefined,
+        initialDateTime: undefined,
+        finalDateTime: undefined
+    }
+  })
+
+  const onSubmit = handleSubmit(async (fields) => {
+    Object.keys(fields).forEach(key => {
+      if (!fields[key]) {
+        delete fields[key]
+      }
+    })
+    
+    api.get('/appointment', {
+      params: fields
+    })
+      .then(response => {
+        console.log(response.data)
+        setAppointments(response.data.appointments)
+      })
+      .catch(error => console.log(error))
+  })
+  
+  return(    
     <>
       <PinkBar />
       <div className="container">
@@ -38,34 +77,65 @@ export default function SearchAppointments() {
             <h1>
               Filtros
             </h1>
-            <form>
+            <form onSubmit={onSubmit}>
               <div className="sameLine">
-                <InputDefault 
-                  typeInput="text" 
-                  id="patitentName" 
-                  labelName="Nome do Paciente" 
-                />
                 <InputDefault
                   mask="999.999.999-99"
                   typeInput="text" 
                   id="patitentCPF" 
                   labelName="CPF do Paciente" 
+                  {...register("patientCpf", {
+                    setValueAs: value => value?.replace(/\D+/g, ''),
+                    required: false
+                  })}
+                />
+                <InputDefault 
+                  typeInput="text" 
+                  id="patitentName" 
+                  labelName="Nome do Paciente"
+                  {...register("patientName", {
+                    required: false
+                  })}
                 />
               </div>
               <div className="sameLine">
                 <InputDefault 
                   typeInput="datetime-local" 
                   id="appointmentInitialDatetime" 
-                  labelName="Data e hora inicial" 
+                  labelName="Data e hora inicial"
+                  {...register("initialDateTime", {
+                    required: false
+                  })}
                 />
                 <InputDefault 
                   typeInput="datetime-local" 
                   id="appointmentFinalDatetime" 
-                  labelName="Data e hora final" 
+                  labelName="Data e hora final"
+                  {...register("finalDateTime", {
+                    required: false
+                  })} 
                 />
               </div>
-              <BtnDefaultPink1 value="Pesquisar"/>
+              <BtnDefaultPink1 value="Pesquisar" type="submit" />
             </form>
+            <section id="returnedAppointments">
+              {appointments.map(appointment => (
+                <Link to={`/appointment/${appointment.id}`} key={appointment.id}>
+                  <article>
+                      <header>
+                        <h4>{appointment.user.name}</h4>
+                        <p>{`Consulta ${appointment.id}`}</p>
+                      </header> 
+                      <p>
+                        {dayjs
+                          .utc(appointment.dateTime)
+                          .tz('America/Sao_Paulo')
+                          .format('DD/MM - HH:mm')}
+                      </p>
+                  </article>
+                </Link>
+              ))}
+            </section>
           </main>
       </div>
     </>

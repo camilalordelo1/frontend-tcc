@@ -14,10 +14,16 @@ import SearchAppointments from './Templates/SearchAppointments';
 /* PAGES SITE */
 import Home  from './Templates/Site/Home';
 import { Contato } from './Templates/Site/Contato';
+<<<<<<< HEAD
 
   // ESPECIALIDADES
   import { Ortopedica } from './Templates/Site/Especialidades/Ortopedica';
   import { PrePosOperatorio } from './Templates/Site/Especialidades/PrePosOperatorio';
+=======
+import Appointment from './Templates/Appointment';
+  // ESPECIALIDADES
+import { Ortopedica } from './Templates/Site/Especialidades/Ortopedica';
+>>>>>>> 57f8ad36b55c98de32a1a29e8279a75b682c4fea
 
 export default function Routes() {
   return (
@@ -44,6 +50,8 @@ export default function Routes() {
         <Route path='/appointment/new' component={NewAppointment}/>
         {/* Pesquisar consultas agendadas */}
         <Route path='/search' component={SearchAppointments}/>
+        {/* Informações de uma consulta específica */}
+        <Route path='/appointment/:id' component={Appointment}/>
       </Switch>
     </BrowserRouter>
   )

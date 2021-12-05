@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { useHistory } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 
 import { useForm } from 'react-hook-form';
-import tz from 'dayjs/plugin/timezone'
 import dayjs from 'dayjs';
-
-import './styles.css'
+import utc from 'dayjs/plugin/utc'
+import tz from 'dayjs/plugin/timezone'
 
 import pngHome from '../../img/home.png'
 import pngCalendar from '../../img/calendar.png'
@@ -17,67 +15,88 @@ import { NavItem } from '../../Components/NavItem';
 import { PinkBar } from '../../Components/PinkBar';
 import { InputDefault } from '../../Components/InputDefault'
 import { BtnDefaultPink1 } from '../../Components/_BtnsDefault/BtnDefaultPink1'
-import { api } from '../../services/api';
 
+import { api } from '../../services/api'
+
+dayjs.extend(utc)
 dayjs.extend(tz)
 
-export default function NewAppointment() {
-  const [patient, setPatient] = useState({})
+export default function Appointment({ match }) {
+  const [appointment, setAppointmentInfo] = useState({})
   const [phoneState, setPhoneState] = useState('')
-  
-  const history = useHistory()
+  const [cpfState, setCPFState] = useState('')
+  const [timeState, setTimeState] = useState('')
+  const [dayState, setDayState] = useState('')
 
-  const { register, handleSubmit, getValues, setValue } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
-        cpf: undefined,
-        name: undefined,
-        email: undefined,
-        phone: undefined,
+        user: {
+          cpf: undefined,
+          name: undefined,
+          email: undefined,
+          phone: undefined,
+        },
         date: undefined,
         time: undefined,
         comments: undefined,
         appointmentType: undefined
     }
-  })  
+  })
 
-  const searchpatient = async () => {
-    const cpfInput = getValues('cpf')
-
-    const cpf = cpfInput.replace(/[_.-\s]/g, "")
-
-    if (cpf.length < 11) {
-      return
-    }
-
-    api.get('/user', {
+  useEffect(() => {
+    api.get(`/appointment`, {
       params: {
-        cpf
+        id: match.params.id
+      }
+    }).then(response => {
+      console.log(response.data)
+      setPhoneState(response.data.appointments[0].user.phone)
+      setCPFState(response.data.appointments[0].user.cpf)
+      setTimeState(
+        dayjs
+        .utc(response.data.appointments[0].dateTime)
+        .tz('America/Sao_Paulo')
+        .format('HH:mm')
+      )
+      setDayState(
+        dayjs
+        .utc(response.data.appointments[0].dateTime)
+        .tz('America/Sao_Paulo')
+        .format('YYYY-MM-DD')
+      )
+      setAppointmentInfo(response.data.appointments[0])
+    })
+  }, [match.params.id])
+  
+  const handleFormSubmit = handleSubmit(async fields => {
+    const { id } = match.params
+    
+    Object.keys(fields).forEach(key => {
+      if (fields[key].length === 0 || !fields[key]) {
+        delete fields[key]
       }
     })
-      .then(response => {
-        console.log(response.data)
-        setPatient(response.data)
-        setValue("email", response.data.email)
-        setValue("phone", response.data.phone)
-        setPhoneState(response.data.phone)
-        setValue("name", response.data.name)
-      })
-      .catch(err => console.log(err))
-  }
 
-  const handleFormSubmit = handleSubmit(async (fields) => {
+    Object.keys(fields.user).forEach(key => {
+      if (fields.user[key].length === 0 || !fields.user[key]) {
+        delete fields.user[key]
+      }
+    })
+    
     const dateTime = 
-      dayjs(`${fields.date} ${fields.time}`)
-        .tz('America/Sao_Paulo')
+      dayjs 
+        .tz(`${fields.date} ${fields.time}`, 'America/Sao_Paulo')
+        .utc()
         .format()
 
     delete fields.date
     delete fields.time
 
-    api.post('/appointment', {
+    api.put('/appointment', {
       ...fields,
-      dateTime
-    }).then(() => history.push('/dashboard'))
+      dateTime,
+      id
+    }).then(response => console.log(response))
   })
 
   return(    
@@ -98,33 +117,31 @@ export default function NewAppointment() {
               </div>
               <div className="title-text">
                 <h1>
-                  Marcar consulta
+                  Consulta {match.params.id}
                 </h1>
               </div>           
           </div>
-          <main className="admPages">
-            <h1>
-              Nova Consulta
-            </h1>
-            <form onSubmit={handleFormSubmit}>
+          <main className="admPages" style={{marginTop: '1.6rem'}}>
+            <form onSubmit={handleFormSubmit}> 
               <InputDefault
                 mask="999.999.999-99"
                 typeInput="text" 
                 id="patientCPF" 
                 labelName="CPF do Paciente"
+                value={cpfState}
                 style={ { width: '32%' } }
-                {...register("cpf", {
+                {...register("user.cpf", {
                   required: false,
                   setValueAs: value => value?.replace(/\D+/g, ''),
-                  onBlur: searchpatient
+                  onChange: e => setCPFState(e.target.value)
                 })}
               />
               <InputDefault 
                 typeInput="text" 
                 id="patientName"
                 labelName="Nome do Paciente"
-                defaultValue={patient.name}
-                {...register("name", {
+                defaultValue={appointment?.user?.name}
+                {...register("user.name", {
                   required: false
                 })}
               />
@@ -133,8 +150,8 @@ export default function NewAppointment() {
                   typeInput="email" 
                   id="patientEmail" 
                   labelName="E-mail do Paciente"
-                  defaultValue={patient.email}
-                  {...register("email", {
+                  defaultValue={appointment?.user?.email}
+                  {...register("user.email", {
                     required: false
                   })}
                 />
@@ -144,7 +161,7 @@ export default function NewAppointment() {
                   id="phone" 
                   labelName="Telefone Celular"
                   value={phoneState}
-                  {...register("phone", {
+                  {...register("user.phone", {
                     required: false,
                     setValueAs: value => value?.replace(/\D+/g, ''),
                     onChange: e => setPhoneState(e.target.value)
@@ -154,7 +171,8 @@ export default function NewAppointment() {
               <div className="sameLine">
                 <InputDefault 
                   typeInput="date" 
-                  id="appointmentDate" 
+                  id="appointmentDate"
+                  defaultValue={dayState}
                   labelName="Data da consulta" 
                   {...register("date", {
                     required: false
@@ -162,7 +180,8 @@ export default function NewAppointment() {
                 />
                 <InputDefault 
                   typeInput="time" 
-                  id="appointmentHour" 
+                  id="appointmentHour"
+                  defaultValue={timeState}
                   labelName="Horário da consulta"
                   {...register("time", {
                     required: false
@@ -172,6 +191,7 @@ export default function NewAppointment() {
                   typeInput="text" 
                   id="AppointmentType" 
                   labelName="Tipo de consulta"
+                  defaultValue={appointment?.appointmentType}
                   {...register("appointmentType", {
                     required: false
                   })}
@@ -181,13 +201,14 @@ export default function NewAppointment() {
                 <label htmlFor="commentsTextarea">Anotações</label>
                 <textarea 
                   id="commentsTextarea" 
+                  defaultValue={appointment.comments}
                   {...register("comments", {
                     required: false,
                     maxLength: 1200
                   })}
                 />
               </div>
-              <BtnDefaultPink1 value="Enviar" type="submit" />
+              <BtnDefaultPink1 value="Atualizar" type="submit" />
             </form>
           </main>
       </div>
