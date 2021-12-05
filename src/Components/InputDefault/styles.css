@@ -45,6 +45,8 @@
   font-size: 15px;
   font-weight: 500;
   z-index: 10;
+  background-color: var(--white-default);
+  border-radius: 2px;
 }
 
 .form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {

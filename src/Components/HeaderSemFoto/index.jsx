@@ -6,11 +6,11 @@ import { Logo } from '../_NavElements/Logo'
 import { BtnDefaultPink1 } from '../_BtnsDefault/BtnDefaultPink1';
 
 
-export const Header = (props) => {
+export const HeaderSemFoto = (props) => {
     const conteudoHeader  = props.conteudoHeader;
     return(
     <>
-    <header className="header-">
+    <header className="header-s">
         <div className="container">
             <div className="bar-social">
                     <BtnSocialMedia />
