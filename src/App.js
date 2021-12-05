@@ -1,7 +1,10 @@
 import Routes from "./routes";
+import { CookiesProvider } from 'react-cookie'
 
 export default function App() {
   return (
-    <Routes />
+    <CookiesProvider>
+      <Routes />
+    </CookiesProvider>
   )
 } 

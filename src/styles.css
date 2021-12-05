@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+a:-webkit-any-link {
+  color: unset;
+}
+
 img {
   max-width: 100%;
 }
@@ -38,7 +42,7 @@ img {
   --tertiary-pink: #f3b4c4;
   --pink-dark: #9e1b3c;
   --white-default: #ffff;
-  --primary-blue: #63f1e1;
+  --primary-blue: #0dcfb9;
 }
 
 .nav {

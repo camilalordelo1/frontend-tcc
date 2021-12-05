@@ -14,6 +14,7 @@ import Home  from './Templates/Site/Home';
 import { Contato } from './Templates/Site/Contato';
 import NewAppointment from './Templates/NewAppointment';
 import SearchAppointments from './Templates/SearchAppointments';
+import Appointment from './Templates/Appointment';
 
 export default function Routes() {
   return (
@@ -37,6 +38,8 @@ export default function Routes() {
         <Route path='/appointment/new' component={NewAppointment}/>
         {/* Pesquisar consultas agendadas */}
         <Route path='/search' component={SearchAppointments}/>
+        {/* Informações de uma consulta específica */}
+        <Route path='/appointment/:id' component={Appointment}/>
       </Switch>
     </BrowserRouter>
   )

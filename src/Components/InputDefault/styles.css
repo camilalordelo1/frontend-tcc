@@ -60,4 +60,7 @@
 }
 
 @media (max-width: 700px) {
+  .form__input {
+    width: 100% !important;
+  }
 }
