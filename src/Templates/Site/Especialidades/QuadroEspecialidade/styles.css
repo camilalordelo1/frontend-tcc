@@ -21,6 +21,11 @@
     width: 40vw;
 }
 
+.azul-retangulo p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .title-info-espe {
     list-style: disc;
     margin-left: 20px;

@@ -14,16 +14,16 @@ import SearchAppointments from './Templates/SearchAppointments';
 /* PAGES SITE */
 import Home  from './Templates/Site/Home';
 import { Contato } from './Templates/Site/Contato';
-<<<<<<< HEAD
 
-  // ESPECIALIDADES
-  import { Ortopedica } from './Templates/Site/Especialidades/Ortopedica';
-  import { PrePosOperatorio } from './Templates/Site/Especialidades/PrePosOperatorio';
-=======
-import Appointment from './Templates/Appointment';
-  // ESPECIALIDADES
+
 import { Ortopedica } from './Templates/Site/Especialidades/Ortopedica';
->>>>>>> 57f8ad36b55c98de32a1a29e8279a75b682c4fea
+import { PrePosOperatorio } from './Templates/Site/Especialidades/PrePosOperatorio';
+import { Neurologia } from './Templates/Site/Especialidades/Neurologia';
+import { Tratamentos } from './Templates/Site/Especialidades/Tratamentos';
+
+import Appointment from './Templates/Appointment';
+
+
 
 export default function Routes() {
   return (
@@ -33,6 +33,8 @@ export default function Routes() {
         <Route path="/contato" component={Contato} />
         <Route path="/especialidades/ortopedica" component={Ortopedica} />
         <Route path="/especialidades/pre-pos-operatorio" component={PrePosOperatorio} />
+        <Route path="/especialidades/neurologia" component={Neurologia} />
+        <Route path="/especialidades/tratamentos" component={Tratamentos} />
         {/* Home de Login */}
 
         <Route path='/adm' component={Login} />

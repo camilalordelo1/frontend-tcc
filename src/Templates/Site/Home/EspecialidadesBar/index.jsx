@@ -27,14 +27,14 @@ export const EspecialidadesBar = () => {
                         </Link>
                         </div>
                         <div className="pri-item">
-                        <Link className="btn-link">
+                        <Link to="/especialidades/neurologia" className="btn-link">
                             <h3> NEUROLOGIA ADULTO E INFANTIL </h3>
                             <img src={imgArrow} alt="" />
                         </Link>
                         </div>
                         
                         <div className="pri-item">
-                        <Link className="btn-link">
+                        <Link to="/especialidades/tratamentos" className="btn-link">
                             <h3> TRATAMENTOS </h3>
                             <img src={imgArrow} alt="" />
                         </Link>
