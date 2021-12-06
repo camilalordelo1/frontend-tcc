@@ -10,7 +10,7 @@
     font-size: 4.5rem;
     font-weight: 700;
     text-shadow: var(--primary-pink) 1px 1px 20px;
-    margin-top: -70px;
+    margin-top: -10vh;
     text-align: left;
 }
   
@@ -24,7 +24,12 @@
 
   @media (max-width: 700px) {
     .agende {
-      padding: 5px 30px 5px 20px;
+      margin-top: -10px;
+      padding: 15vh 70px 20px 20px;
+    }
+
+    .agende h2 {
+      font-size: 25px;
     }
   
   }

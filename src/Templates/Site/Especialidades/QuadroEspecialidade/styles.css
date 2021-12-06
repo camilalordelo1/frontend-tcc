@@ -41,3 +41,10 @@
     margin-top: 5px;
 }
 
+@media (max-width: 700px) {
+    .title-info-espe h3 {
+        align-items: center;
+    }
+    
+}
+

@@ -21,9 +21,8 @@ export const Header = (props) => {
                     <div className="logo">
                         <Logo />    
                     </div>
-                    <div>
-                        <nav>
-                            <ul className="nav-bar">
+                    <div className="nav-bar">
+                            <ul>
                                 <div>
                                     <li> <Link to="/" className="btn-link"> Home </Link></li>
                                 </div>
@@ -35,8 +34,7 @@ export const Header = (props) => {
                                 </div>
                                 <div className="btn-entrar"> <Link to="/"> <BtnDefaultPink1 type={"button"} value={"Entrar"} /> </Link> </div>
                             </ul>
-                        </nav>
-                    </div>
+                        </div>
                 </div>
             </div>
             {conteudoHeader}

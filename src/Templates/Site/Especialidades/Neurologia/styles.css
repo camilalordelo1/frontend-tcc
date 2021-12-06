@@ -1,0 +1,9 @@
+@media (max-width: 700px) {
+    .especialidade h1 {
+        display: flex;
+        padding: 5px;
+        text-align: center;
+        flex-wrap: wrap;
+        font-size: 2rem;
+    }
+}
