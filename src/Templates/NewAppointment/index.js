@@ -8,7 +8,6 @@ import dayjs from 'dayjs';
 import './styles.css'
 
 import pngHome from '../../img/home.png'
-import pngCalendar from '../../img/calendar.png'
 import pngPlus from '../../img/plus.png'
 import pngSearch from '../../img/search.png'
 
@@ -18,6 +17,7 @@ import { PinkBar } from '../../Components/PinkBar';
 import { InputDefault } from '../../Components/InputDefault'
 import { BtnDefaultPink1 } from '../../Components/_BtnsDefault/BtnDefaultPink1'
 import { api } from '../../services/api';
+import LogoutButton from '../../Components/_BtnsDefault/LogoutButton';
 
 dayjs.extend(tz)
 
@@ -85,14 +85,16 @@ export default function NewAppointment() {
       <PinkBar />
       <div className="container">
           <div className="header">
+            <div className="sameLine" style={{justifyContent: 'space-between', width: '100%'}}>
               <div className="logo">
-                  <Logo />
+                <Logo />
               </div>
+              <LogoutButton />
+            </div>
           </div>
           <div className="bar-options">
               <div className="nav-bar-container">
                   <NavItem text="Tela inicial" src={pngHome} link="/dashboard"/>
-                  <NavItem text="Visualizar calendário" src={pngCalendar} link="/calendar"/>
                   <NavItem text="Marcar consulta" src={pngPlus}  link="/appointment/new" color="white" />
                   <NavItem text="Pesquisar consulta" src={pngSearch}  link="/search" />
               </div>

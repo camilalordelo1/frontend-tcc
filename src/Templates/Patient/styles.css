@@ -1,0 +1,116 @@
+.flexAlignCenter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+ul#nav-links {
+  margin-top: 1.2rem;
+}
+
+ul#nav-links li {
+  display: inline;
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+ul#nav-links li:first-child {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.header button {
+  margin-top: 1.6rem;
+}
+
+section#greetings h1 {
+  color: var(--primary-pink);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+section#greetings {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0 0.8rem;
+  border-bottom: 2px solid #c4c4c4;
+  padding-bottom: 1.6rem;
+  margin: 1.2rem 0;
+}
+
+section#patientAppointments {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+article.appointment.patientAppointment {
+  width: 16rem;
+  height: 6.8rem;
+  cursor: unset !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button.appointmentButton {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  color: white;
+  margin: 0.6rem 0;
+  transition: 0.2s;
+  height: 30px;
+}
+
+button.confirmAppointment:hover {
+  transform: scale(1.05);
+}
+
+button.confirmAppointment {
+  background-color: var(--primary-pink);
+  cursor: pointer;
+}
+
+button.alreadyConfirmed {
+  background-color: #c4c4c4;
+}
+
+article.appointment section {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 700px) {
+  .flexAlignCenter {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .header button {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+
+  ul#nav-links {
+    margin-top: 0;
+  }
+
+  section#greetings {
+    text-align: left;
+    font-size: 1.2rem;
+  }
+
+  section#greetings h1 {
+    justify-content: flex-start;
+    font-size: 2rem;
+  }
+
+  section#patientAppointments {
+    justify-content: flex-start;
+  }
+}

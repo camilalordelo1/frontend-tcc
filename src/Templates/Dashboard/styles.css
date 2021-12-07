@@ -6,6 +6,8 @@
   margin-top: 0;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 1rem;
+  align-items: center;
 }
 
 /* Container msg + sub-msg*/
@@ -55,7 +57,7 @@
   display: flex;
   background-color: var(--white-default);
   width: 85%;
-  height: 300px;
+  max-height: 300px;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -97,7 +99,10 @@ tr {
 .scheduled-times {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+}
+
+td a {
+  width: 100%;
 }
 
 @media (max-width: 765px) {
@@ -112,5 +117,18 @@ tr {
     display: flex;
     margin: 0 auto;
     align-items: center;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header-child-container {
+    margin: 0 auto 1rem auto;
+    align-items: center;
+  }
+
+  .sub-msg {
+    text-align: center;
   }
 }

@@ -30,13 +30,5 @@
 }
 
 .pink {
-  background: #e95b7f;
-}
-
-.blue {
-  background: #15b19e;
-}
-
-.yellow {
-  background: #e0cc15;
+  background: var(--secundary-pink);
 }

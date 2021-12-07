@@ -6,7 +6,6 @@ import tz from 'dayjs/plugin/timezone'
 import './styles.css'
 
 import pngHome from '../../img/home.png'
-import pngCalendar from '../../img/calendar.png'
 import pngPlus from '../../img/plus.png'
 import pngSearch from '../../img/search.png'
 
@@ -15,9 +14,11 @@ import { NavItem } from '../../Components/NavItem';
 import { PinkBar } from '../../Components/PinkBar';
 import { InputDefault } from '../../Components/InputDefault'
 import { BtnDefaultPink1 } from '../../Components/_BtnsDefault/BtnDefaultPink1'
+import AppointmentField from '../../Components/AppointmentField'
 import { api } from '../../services/api';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import LogoutButton from '../../Components/_BtnsDefault/LogoutButton';
 
 dayjs.extend(utc)
 dayjs.extend(tz)
@@ -56,14 +57,16 @@ export default function SearchAppointments() {
       <PinkBar />
       <div className="container">
           <div className="header">
-              <div className="logo">
+            <div className="sameLine" style={{justifyContent: 'space-between', width: '100%'}}>
+                <div className="logo">
                   <Logo />
+                </div>
+                <LogoutButton />
               </div>
-          </div>
+            </div>
           <div className="bar-options">
               <div className="nav-bar-container">
                   <NavItem text="Tela inicial" src={pngHome} link="/dashboard"/>
-                  <NavItem text="Visualizar calendário" src={pngCalendar} link="/calendar"/>
                   <NavItem text="Marcar consulta" src={pngPlus}  link="/appointment/new" />
                   <NavItem text="Pesquisar consulta" src={pngSearch}  link="/search" color="white" />
               </div>
@@ -121,18 +124,11 @@ export default function SearchAppointments() {
             <section id="returnedAppointments">
               {appointments.map(appointment => (
                 <Link to={`/appointment/${appointment.id}`} key={appointment.id}>
-                  <article>
-                      <header>
-                        <h4>{appointment.user.name}</h4>
-                        <p>{`Consulta ${appointment.id}`}</p>
-                      </header> 
-                      <p>
-                        {dayjs
-                          .utc(appointment.dateTime)
-                          .tz('America/Sao_Paulo')
-                          .format('DD/MM - HH:mm')}
-                      </p>
-                  </article>
+                  <AppointmentField 
+                    dateTime={appointment.dateTime} 
+                    id={appointment.id} 
+                    name={appointment.user.name}
+                  />
                 </Link>
               ))}
             </section>

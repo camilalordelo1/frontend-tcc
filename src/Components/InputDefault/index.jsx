@@ -8,15 +8,17 @@ export const InputDefault = React.forwardRef(({
 	labelName,
 	mask,
 	style,
+	onChange,
+	onBlur,
 	...rest
-}, ref) => {
-	// Props => id, typeInput, labelName, ?mask
-	
+}, ref) => {	
 	return (
 		<div className="input-filho">
 			<div className="form__div">
 			<ReactInputMask
 				mask={mask}
+				onChange={onChange}
+				onBlur={onBlur}
 				{...rest}
 			>
 				{(inputProps) => (
@@ -26,6 +28,8 @@ export const InputDefault = React.forwardRef(({
 						className="form__input" 
 						placeholder=" "
 						ref={ref}
+						onChange={onChange}
+						onBlur={onBlur}
 						name={inputProps.name}
 						defaultValue={inputProps.defaultValue}
 						style={style}

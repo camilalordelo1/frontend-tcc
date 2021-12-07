@@ -6,7 +6,6 @@ import utc from 'dayjs/plugin/utc'
 import tz from 'dayjs/plugin/timezone'
 
 import pngHome from '../../img/home.png'
-import pngCalendar from '../../img/calendar.png'
 import pngPlus from '../../img/plus.png'
 import pngSearch from '../../img/search.png'
 
@@ -17,6 +16,8 @@ import { InputDefault } from '../../Components/InputDefault'
 import { BtnDefaultPink1 } from '../../Components/_BtnsDefault/BtnDefaultPink1'
 
 import { api } from '../../services/api'
+import Modal, { openModal } from '../../Components/Modal';
+import { useHistory } from 'react-router-dom';
 
 dayjs.extend(utc)
 dayjs.extend(tz)
@@ -28,27 +29,15 @@ export default function Appointment({ match }) {
   const [timeState, setTimeState] = useState('')
   const [dayState, setDayState] = useState('')
 
-  const { register, handleSubmit } = useForm({
-    defaultValues: {
-        user: {
-          cpf: undefined,
-          name: undefined,
-          email: undefined,
-          phone: undefined,
-        },
-        date: undefined,
-        time: undefined,
-        comments: undefined,
-        appointmentType: undefined
-    }
-  })
+  const history = useHistory()
 
   useEffect(() => {
     api.get(`/appointment`, {
       params: {
         id: match.params.id
       }
-    }).then(response => {
+    })
+    .then(response => {
       console.log(response.data)
       setPhoneState(response.data.appointments[0].user.phone)
       setCPFState(response.data.appointments[0].user.cpf)
@@ -66,7 +55,29 @@ export default function Appointment({ match }) {
       )
       setAppointmentInfo(response.data.appointments[0])
     })
-  }, [match.params.id])
+    .catch(() => history.push('/dashboard'))
+
+    return function cleanup() {
+      const body = document.body
+
+      body.style.overflow = 'auto'
+    }
+  }, [match.params.id, history])
+  
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+        user: {
+          cpf: undefined,
+          name: undefined,
+          email: undefined,
+          phone: undefined,
+        },
+        date: undefined,
+        time: undefined,
+        comments: undefined,
+        appointmentType: undefined
+    }
+  })
   
   const handleFormSubmit = handleSubmit(async fields => {
     const { id } = match.params
@@ -82,13 +93,13 @@ export default function Appointment({ match }) {
         delete fields.user[key]
       }
     })
-    
+
     const dateTime = 
       dayjs 
-        .tz(`${fields.date} ${fields.time}`, 'America/Sao_Paulo')
+        .tz(`${fields.date || dayState} ${fields.time || timeState}`, 'America/Sao_Paulo')
         .utc()
         .format()
-
+    
     delete fields.date
     delete fields.time
 
@@ -99,8 +110,25 @@ export default function Appointment({ match }) {
     }).then(response => console.log(response))
   })
 
+  const handleDeleteAppointment = () => {
+    api.delete('/appointment', {
+      params: {
+        appointmentId: appointment.id,
+        jobId: appointment.taskId
+      }
+    })
+    .then(() => history.push('/dashboard'))
+    .catch(err => console.log(err))
+  }
+
   return(    
     <>
+      <Modal 
+        title="Desmarcar consulta?"
+        date={dayState}
+        time={timeState}
+        callback={handleDeleteAppointment}
+      />
       <PinkBar />
       <div className="container">
           <div className="header">
@@ -111,7 +139,6 @@ export default function Appointment({ match }) {
           <div className="bar-options">
               <div className="nav-bar-container">
                   <NavItem text="Tela inicial" src={pngHome} link="/dashboard"/>
-                  <NavItem text="Visualizar calendário" src={pngCalendar} link="/calendar"/>
                   <NavItem text="Marcar consulta" src={pngPlus}  link="/appointment/new" color="white" />
                   <NavItem text="Pesquisar consulta" src={pngSearch}  link="/search" />
               </div>
@@ -122,7 +149,23 @@ export default function Appointment({ match }) {
               </div>           
           </div>
           <main className="admPages" style={{marginTop: '1.6rem'}}>
+          {dayjs
+            .utc(appointment.dateTime)
+            .diff(dayjs.utc(), "day") <= 5 &&
+            (appointment.confirmed ? 
+              (
+                <button className="alreadyConfirmed appointmentButton" >
+                  Consulta Confirmada
+                </button>
+              ) : (
+                <button className="confirmAppointment appointmentButton">
+                  Confirmar presença
+                </button>
+              )
+            )
+            }
             <form onSubmit={handleFormSubmit}> 
+            
               <InputDefault
                 mask="999.999.999-99"
                 typeInput="text" 
@@ -208,7 +251,19 @@ export default function Appointment({ match }) {
                   })}
                 />
               </div>
-              <BtnDefaultPink1 value="Atualizar" type="submit" />
+              <div>
+                <BtnDefaultPink1 
+                  value="Atualizar" 
+                  type="submit" 
+                  style={{backgroundColor: 'var(--primary-blue)'}}
+                />
+                <BtnDefaultPink1 
+                  value="Desmarcar" 
+                  type="button"
+                  callback={openModal}
+                  style={{marginLeft: '1.6rem'}} 
+                />
+              </div>
             </form>
           </main>
       </div>

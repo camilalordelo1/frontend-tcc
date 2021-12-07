@@ -1,13 +1,11 @@
 import './styles.css'
 
-export const ScheduledTimesItem = (props) => {
-    const  { nameCheck, hourCheck, numberCheck } = 
-    props;
+export const ScheduledTimesItem = ({ nameCheck, hourCheck, numberCheck, color }) => {
     // color => pink, blue, yellow
     
     return(
         <>
-        <div className="scheduled-times-item">
+        <div className={`scheduled-times-item ${color}`}>
             <div className="row-sche">
                 <h1> {nameCheck} </h1>
                 <p> {hourCheck} </p>

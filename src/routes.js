@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from 'history'
 
 /*PAGES ADM */
 import Login from './Templates/HomeLogin';
@@ -17,33 +18,41 @@ import { Contato } from './Templates/Site/Contato';
 import Appointment from './Templates/Appointment';
   // ESPECIALIDADES
 import { Ortopedica } from './Templates/Site/Especialidades/Ortopedica';
+import ProtectedRoute from './Components/ProtectedRoute';
+import Patient from './Templates/Patient';
+import Profile from './Templates/Patient/Profile';
 
 export default function Routes() {
+  const history = createBrowserHistory()
+  
   return (
-    <BrowserRouter>
+    <BrowserRouter history={history}>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path="/contato" component={Contato} />
-        <Route path="/especialidades/ortopedica" component={Ortopedica} />
+        <Route exact path="/contato" component={Contato} />
+        <Route exact path="/especialidades/ortopedica" component={Ortopedica} />
         {/* Home de Login */}
-
-        <Route path='/adm' component={Login} />
+        <Route exact path='/adm' component={Login} />
         {/* Recuperar senha */}
-        <Route path='/recoverypass' component={Recoverypass} />
+        <Route exact path='/recoverypass' component={Recoverypass} />
         {/* Confirmar código */}
-        <Route path='/confirmcod' component={ConfirmCod} />
+        <Route exact path='/confirmcod' component={ConfirmCod} />
         {/* Digitar nova senha */}
-        <Route path='/newpass' component={NewPass} />
+        <Route exact path='/newpass' component={NewPass} />
         {/* Senha alterada com sucesso */}
-        <Route path='/passchanged' component={PassChanged} />
+        <Route exact path='/passchanged' component={PassChanged} />
         {/* Dashboard Administrativo */}
-        <Route path='/dashboard' component={Dashboard}/>
+        <ProtectedRoute exact path='/dashboard' component={Dashboard}/>
         {/* Novo agendamento */}
-        <Route path='/appointment/new' component={NewAppointment}/>
+        <ProtectedRoute exact path='/appointment/new' component={NewAppointment}/>
         {/* Pesquisar consultas agendadas */}
-        <Route path='/search' component={SearchAppointments}/>
+        <ProtectedRoute exact path='/search' component={SearchAppointments}/>
         {/* Informações de uma consulta específica */}
-        <Route path='/appointment/:id' component={Appointment}/>
+        <ProtectedRoute exact path='/appointment/:id' component={Appointment}/>
+        {/* Dashboard do cliente */}
+        <ProtectedRoute exact path='/patient' component={Patient} />
+        {/* Informacoes do cliente */}
+        <ProtectedRoute exact path='/patient/profile' component={Profile} />
       </Switch>
     </BrowserRouter>
   )

@@ -28,7 +28,7 @@ export const Header = (props) => {
                             <li> <a href="/#especialidades" className="btn-link"> Especialidades </a>
                             </li>
                             <li> <Link to ="/contato" className="btn-link"> Contato </Link> </li>
-                            <div className="btn-entrar"> <Link to="/"> <BtnDefaultPink1 type={"button"} value={"Entrar"} /> </Link> </div>
+                            <div className="btn-entrar"> <Link to="/adm"> <BtnDefaultPink1 type={"button"} value={"Entrar"} /> </Link> </div>
                         </ul>
                     </nav>
             </div>
