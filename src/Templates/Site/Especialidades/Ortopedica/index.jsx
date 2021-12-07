@@ -80,7 +80,6 @@ export const Ortopedica = () => {
                 ))}
 
             </div>
-
         </div>)
 
     return(

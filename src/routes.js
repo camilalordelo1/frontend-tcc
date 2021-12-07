@@ -15,12 +15,19 @@ import SearchAppointments from './Templates/SearchAppointments';
 /* PAGES SITE */
 import Home  from './Templates/Site/Home';
 import { Contato } from './Templates/Site/Contato';
-import Appointment from './Templates/Appointment';
-  // ESPECIALIDADES
+
+
 import { Ortopedica } from './Templates/Site/Especialidades/Ortopedica';
 import ProtectedRoute from './Components/ProtectedRoute';
 import Patient from './Templates/Patient';
 import Profile from './Templates/Patient/Profile';
+import { PrePosOperatorio } from './Templates/Site/Especialidades/PrePosOperatorio';
+import { Neurologia } from './Templates/Site/Especialidades/Neurologia';
+import { Tratamentos } from './Templates/Site/Especialidades/Tratamentos';
+
+import Appointment from './Templates/Appointment';
+
+
 
 export default function Routes() {
   const history = createBrowserHistory()
@@ -31,6 +38,11 @@ export default function Routes() {
         <Route exact path='/' component={Home} />
         <Route exact path="/contato" component={Contato} />
         <Route exact path="/especialidades/ortopedica" component={Ortopedica} />
+        <Route exact path="/contato" component={Contato} />
+        <Route exact path="/especialidades/ortopedica" component={Ortopedica} />
+        <Route exact path="/especialidades/pre-pos-operatorio" component={PrePosOperatorio} />
+        <Route exact path="/especialidades/neurologia" component={Neurologia} />
+        <Route exact path="/especialidades/tratamentos" component={Tratamentos} />
         {/* Home de Login */}
         <Route exact path='/adm' component={Login} />
         {/* Recuperar senha */}

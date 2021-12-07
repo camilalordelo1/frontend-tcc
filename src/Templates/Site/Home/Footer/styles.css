@@ -56,12 +56,27 @@
 }
 
 @media (max-width: 700px){
+    .footer {
+        flex-direction: column;
+    }
     .contat p {
         margin-right: 20px;
     }
 
     .contat {
+        display: flex;
         flex-direction: row;
         align-items: center;
+        text-align: center;
+    }
+    .end-tel {
+        max-width: 100%;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .end-tel p {
+        
+        width: 100%;
     }
 }

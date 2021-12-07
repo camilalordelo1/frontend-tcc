@@ -2,7 +2,7 @@ import './styles.css'
 
 import { HeaderHome }  from './HeaderHome'
 import { NossoConsul } from './NossoConsul';
-import { Especialidades } from './Especialidades';
+import { EspecialidadesBar } from './EspecialidadesBar';
 import { Footer } from './Footer';
 
 function Home () {
@@ -15,7 +15,7 @@ function Home () {
     <NossoConsul />
 
     {/* Especialidade */}
-    <Especialidades />
+    <EspecialidadesBar />
 
     { /* Footer */}
     <Footer />
