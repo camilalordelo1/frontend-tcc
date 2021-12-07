@@ -30,14 +30,12 @@ export const AuthProvider = ({ children }) => {
       const { staff, sub } = decodeToken(data.accessToken)
 
       return { data: { staff, sub } }
-    } catch (error) {
-      console.log(error?.response)
-      
-      if (error?.response.status === 401) {
+    } catch (error) {      
+      if (error?.response?.status === 401) {
         setIsAuthenticated(false)
         return error.response
       } else {
-        console.log(error?.response.data)
+        console.log(error?.response?.data)
       }
     }
   }

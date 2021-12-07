@@ -149,21 +149,28 @@ export default function Appointment({ match }) {
               </div>           
           </div>
           <main className="admPages" style={{marginTop: '1.6rem'}}>
-          {dayjs
-            .utc(appointment.dateTime)
-            .diff(dayjs.utc(), "day") <= 5 &&
-            (appointment.confirmed ? 
-              (
-                <button className="alreadyConfirmed appointmentButton" >
-                  Consulta Confirmada
-                </button>
-              ) : (
-                <button className="confirmAppointment appointmentButton">
-                  Confirmar presença
-                </button>
-              )
-            )
-            }
+            <a href={
+                `${process.env.REACT_APP_BASE_URL}/appointment/${appointment.confirmationCode}`
+              } 
+              target="_blank"
+              rel="noreferrer"
+            >
+              {dayjs
+                .utc(appointment.dateTime)
+                .diff(dayjs.utc(), "day") <= 5 &&
+                (appointment.confirmed ? 
+                  (
+                    <button className="alreadyConfirmed appointmentButton" >
+                      Consulta Confirmada
+                    </button>
+                  ) : (
+                    <button className="confirmAppointment appointmentButton">
+                      Confirmar presença
+                    </button>
+                  )
+                )
+              }
+            </a>
             <form onSubmit={handleFormSubmit}> 
             
               <InputDefault

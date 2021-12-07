@@ -36,7 +36,11 @@ function Recoverypass() {
 				/> 
 			</div>
 			<div className="btn-box-d" style={{paddingBottom: "0.5rem"}}>
-					<BtnDefaultPink1 value="Enviar" type="button" onClick={handlePasswordResetRequest} />
+					<BtnDefaultPink1 
+						value="Enviar" 
+						type="button" 
+						onClick={handlePasswordResetRequest} 
+					/>
 			</div>	
 		</div>
 	)

@@ -90,7 +90,7 @@ export const FormLogin = () => {
 					</h4>
 				)
 			}
-			<Link to="/recoverypass">
+			<Link to="/recoverypass" onClick={() => window.location.reload()}>
 				<p className="p-pass">Esqueci a senha</p>
 			</Link>
 			<div className="btn-box-d">

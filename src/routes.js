@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route, Router } from "react-router-dom";
 import { createBrowserHistory } from 'history'
 
 /*PAGES ADM */
@@ -33,7 +33,7 @@ export default function Routes() {
   const history = createBrowserHistory()
   
   return (
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path="/contato" component={Contato} />
@@ -66,6 +66,6 @@ export default function Routes() {
         {/* Informacoes do cliente */}
         <ProtectedRoute exact path='/patient/profile' component={Profile} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   )
 }

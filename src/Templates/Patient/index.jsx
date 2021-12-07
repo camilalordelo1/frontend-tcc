@@ -24,7 +24,8 @@ export default function Patient() {
         setAppointments(resp.data.appointments)
         setUserInfo(resp.data.appointments[0].user)
       })
-  })
+      .catch(err => console.log(err?.response))
+  }, [setUserInfo])
 
   return(
     <>

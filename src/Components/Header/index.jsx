@@ -32,7 +32,7 @@ export const Header = (props) => {
                                 <div>
                                     <li> <Link to ="/contato" className="btn-link"> Contato </Link> </li>
                                 </div>
-                                <div className="btn-entrar"> <Link to="/"> <BtnDefaultPink1 type={"button"} value={"Entrar"} /> </Link> </div>
+                                <div className="btn-entrar"> <Link to="/adm"> <BtnDefaultPink1 type={"button"} value={"Entrar"} /> </Link> </div>
                             </ul>
                         </div>
                 </div>
